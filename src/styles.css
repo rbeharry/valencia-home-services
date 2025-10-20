@@ -1,4 +1,19 @@
-Body {
-    background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
+body {
+    background: linear-gradient(180.2deg, rgb(30, 33, 48) 6.8%, rgb(74, 98, 110) 131%);
     color: white;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Keeps the header on top of other content */
+  background-color: #333; /* Example background color */
+  color: white; /* Example text color */
+  padding: 10px 0;
+  text-align: center;
+}
+
+.content {
+  padding-top: 75px; /* Adjust this value to match your header's height */
 }
