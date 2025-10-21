@@ -101,7 +101,7 @@ html {
 
 
  .header {
-  position: sticky;     /* Make it fixed at the top */
+      /* Make it fixed at the top */
   top: 0;               /* Stick to the very top */
   left: 0;              /* Align to the left edge */
   width: 100%;          /* Full width of the viewport */
