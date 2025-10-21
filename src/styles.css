@@ -4,6 +4,9 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+p {
+    margin: 10px;
+}
 a {
     color: white;
     text-decoration: none;
@@ -498,3 +501,17 @@ footer {
   }
 }
 
+.contact-info {
+    margin: 0;            /* Remove default spacing */
+    font-size: 14px;      /* Adjust size if needed */
+    color: white;         /* Match text color */
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
