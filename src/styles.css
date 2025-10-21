@@ -9,9 +9,17 @@ body {
     font-style: italic;
 }
 
+.phone {
+    font-size: 20px;
+    margin-top: -75px;
+    font-weight: bold;
+    float: right;
+    color: white;
+}
+
 html {
   scroll-behavior: smooth; /* for smooth scrolling effect */
-  scroll-padding-top: 0 px; /* matches header height */
+  scroll-padding-top: 200px; /* matches header height */
 }
 
 

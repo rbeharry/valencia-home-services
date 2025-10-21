@@ -1,34 +1,22 @@
 
-
 document.addEventListener("DOMContentLoaded", function() {
-  const dropdowns = document.querySelectorAll(".dropdown");
+  const servicesBtn = document.getElementById("servicesBtn");
+  const servicesMenu = document.getElementById("servicesMenu");
 
-  dropdowns.forEach(dropdown => {
-    const button = dropdown.querySelector(".dropbtn");
+  // Detect if it's a touch device
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-    button.addEventListener("click", function(e) {
-      e.stopPropagation();
-
-      // Close all other dropdowns first
-      dropdowns.forEach(d => {
-        if (d !== dropdown) d.classList.remove("show");
-      });
-
-      // Toggle the clicked dropdown
-      dropdown.classList.toggle("show");
+  if (isTouchDevice) {
+    servicesBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      servicesMenu.classList.toggle("show");
     });
-  });
 
-  // Close dropdowns when clicking outside
-  document.addEventListener("click", function() {
-    dropdowns.forEach(d => d.classList.remove("show"));
-  });
-
-  // Close dropdowns when clicking a link inside them
-  document.querySelectorAll(".dropdown-content a").forEach(link => {
-    link.addEventListener("click", () => {
-      dropdowns.forEach(d => d.classList.remove("show"));
+    // Close the dropdown if user taps outside
+    window.addEventListener("click", function(e) {
+      if (!servicesBtn.contains(e.target) && !servicesMenu.contains(e.target)) {
+        servicesMenu.classList.remove("show");
+      }
     });
-  });
+  }
 });
-
