@@ -7,6 +7,16 @@ body {
 p {
     margin: 10px;
 }
+
+h2{
+    margin: 10px;
+   
+}
+
+h3 {
+    margin: 10px;
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -502,7 +512,7 @@ footer {
 }
 
 .contact-info {
-    margin: 0;            /* Remove default spacing */
+    margin: 10px;            /* Remove default spacing */
     font-size: 14px;      /* Adjust size if needed */
     color: white;         /* Match text color */
 }
