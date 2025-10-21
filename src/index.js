@@ -37,22 +37,4 @@
   });
 
 
-  // Toggle hamburger menu
-function toggleNavbar() {
-  var x = document.getElementById("myNavbar");
-  if (x.className === "navbar") {
-    x.className += " responsive";
-  } else {
-    x.className = "navbar";
-  }
-}
-
-// Toggle mobile dropdowns
-function toggleDropdown(btn) {
-  var content = btn.nextElementSibling;
-  if (content.style.display === "block") {
-    content.style.display = "none";
-  } else {
-    content.style.display = "block";
-  }
-}
+  
