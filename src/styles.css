@@ -24,9 +24,34 @@ a {
     font-weight: bold;
     float: right;          /* aligns to right on larger screens */
     color: white;
-    margin: 0;             /* optional, remove default spacing */
+    margin: 0; 
+                /* optional, remove default spacing */
 }
 
+.phone a {
+    color: white;           /* match your text color */
+    text-decoration: none;  /* remove underline */
+}
+
+.phone a:hover {
+    text-decoration: underline; /* optional hover effect */
+}
+
+.phone-bottom {
+          /* default font size */
+    color: white;
+    margin: 0;            /* optional, remove default spacing */
+    text-align: left;    /* aligns to right on larger screens */
+}
+
+.phone-bottom a {
+    color: white;          
+    text-decoration: none; 
+}
+
+.phone-bottom a:hover {
+    text-decoration: underline; 
+}
 /* Medium screens (tablets) */
 @media (max-width: 768px) {
     .phone {
