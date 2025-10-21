@@ -1,31 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valencia Home Services</title>
     <link rel="stylesheet" href="src/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 
-
+ 
 
 <body>
     <div class="header" id="myHeader">
   
     <H1 class="content">Welcome to Valencia Home Services</H1>
-    <p class="trusted-partner">Your trusted partner for all home maintenance and repair needs.</p>
+    <p class="trusted-partner">Your trusted partner for all home maintenance and repair needs</p>
     <p class="phone">Call us: (301) 646 9604</p>
-    <p></p>
+
+
+  <div class="social-icons">
+    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+      <i class="bi bi-facebook"></i>
+    </a>
+ 
+   <a href="https://facebook.com" target="_blank" aria-label="Google">
+      <i class="bi bi-google"></i>
+    </a>
+
+    <a href="https://www.yelp.com/biz/valencia-home-services-north-potomac-2" target="_blank" aria-label="Yelp">
+      <i class="bi bi-yelp"></i>
+    </a>
+  </div>
 
 <div class="navbar">
-   <a href="#about">Get In Touch</a>
-    <a href="#about">Read Our Testimonials</a>
-    <a href="#about">Why Choose Us</a>
-    <a href="#about">About Us</a>
+   <a href="#connect">Connect with us</a>
+    <a href="#testimonials">Read Our Testimonials</a>
+   <a href="#whychooseus">Why Choose Us</a>
+
+    
+    
   
   <div class="dropdown">
-    <button class="dropbtn">Our Services
+    <button class="dropbtn"><a href="#about">About Us</a>
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#mission">Our Mission</a>
+      
+    </div>
+    </div>
+     <div class="dropdown">
+    <button class="dropbtn"><a href="#dropbtn">Our Services</a>
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
@@ -38,72 +67,170 @@
       <a href="#humidifiers">Humidifiers & Indoor Air Quality Solutions</a>
       <a href="#service-calls">Service Calls & Troubleshooting</a>
       <a href="#maintenance">Maintenance & System Tune-Ups</a>
+ 
+   
     </div>
     </div>
-     
+
     
+ 
   </div>
     
 </div>
 </div>
+
 <div class="section-title">
-<p>We’re a hardworking local HVAC company built on honesty, craftsmanship, and real-world experience — not sales gimmicks. Our mission is to give homeowners the same quality work the big-name companies promise, without the inflated prices or pressure tactics. We take pride in doing things the right way, explaining every step, and treating your home like our own. As we continue to grow, our goal is to bring that same integrity and hands-on expertise to even more households, while raising the standard of what “good service” should actually look like.</p>
+<p id="introduction">We’re a hardworking local HVAC company built on honesty, craftsmanship, and real-world experience — not sales gimmicks. We give homeowners the same quality work the big-name companies promise, without the inflated prices or pressure tactics. We take pride in doing things the right way, explaining every step, and treating your home like our own. As we continue to grow, our goal is to bring that same integrity and hands-on expertise to even more households, while raising the standard of what “good service” should be.</p>
 
-<h2>Our Services</h2>
+<h2 id="dropbtn">Our Services</h2>
+ <section class="my-projects" id="projects">
 
-<h3 id="tank">Tank Water Heater Installation & Replacement </h3>
-<p>We specialize in the installation and replacement of tank water heaters, ensuring you have a reliable hot water supply for your home. Our team will help you choose the right size and model for your needs, and our installation process is quick and efficient.</p>
+  <div class="grid-container">
+    <div class="grid-item">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/528/original/2025-10-06.png?1759725027"
+          alt="A screenshot of my weather application"
+          class="project"
+        />
+      </a>
+      <h3 id="tank">Tank Water Heater Installation & Replacement</h3>
+      <p>We specialize in the installation and replacement of tank water heaters, ensuring you have a reliable hot water supply for your home. Our team will help you choose the right size and model for your needs, and our installation process is quick and efficient.</p>
+    </div>
 
-<h3 id="furnace">Furnace Installation & Repair</h3>
-<p>Our experienced technicians are equipped to handle all aspects of furnace installation and repair. Whether you need a new furnace installed or your existing unit serviced, we’ve got you covered.</p>
+   <div class="grid-item">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/528/original/2025-10-06.png?1759725027"
+          alt="A screenshot of my weather application"
+          class="project"
+        />
+      </a>
+      <h3 id="furnace">Furnace Installation & Repair</h3>
+      <p>Our experienced technicians are equipped to handle all aspects of furnace installation and repair. Whether you need a new furnace installed or your existing unit serviced, we’ve got you covered.</p>
+    </div>
 
-<h3>Ductwork Repair & Airflow Correction</h3>
-<p>We offer comprehensive ductwork repair and airflow correction services to ensure your HVAC system operates efficiently. Our team will assess your ductwork for leaks, blockages, and other issues, providing effective solutions to improve your home's comfort.</p>
+    <div class="grid-item">
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/882/original/coming-soon-advertise-alert-announcement-concept.jpg?1760511652"
+        alt="Coming soon image"
+        class="project"
+      />
+      <h3 id="ductwork">Ductwork Repair & Airflow Correction</h3>
+      <p>We offer comprehensive ductwork repair and airflow correction services to ensure your HVAC system operates efficiently. Our team will assess your ductwork for leaks, blockages, and other issues, providing effective solutions to improve your home's comfort.</p>
+    
+    
+    </div>
 
-<h3 id="mini-split">Mini Split Installation</h3>
+    <div class="grid-item">   
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/882/original/coming-soon-advertise-alert-announcement-concept.jpg?1760511652"
+        alt="Coming soon image"
+        class="project"
+      />
+      <h3 id="mini-split">Mini Split Installation</h3>
 <p>We are skilled in the installation of mini-split systems, providing you with efficient heating and cooling solutions tailored to your home. We’ll help you choose the right system for your needs and ensure a seamless installation process.</p>
 
-<h3>Heat Pump Installation & Conversion</h3>
+    
+    
+    </div>
+   <div class="grid-item">
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/882/original/coming-soon-advertise-alert-announcement-concept.jpg?1760511652"
+        alt="Coming soon image"
+        class="project"
+      />
+      <h3 id="heat-pump">Heat Pump Installation & Conversion</h3>
 <p>Our team is experienced in the installation and conversion of heat pump systems, offering you an energy-efficient solution for your home. We’ll work with you to determine the best system for your needs and ensure a professional installation.</p>
 
-<h3>Thermostats & Smart Control Installs</h3>
+    
+    
+    </div>
+
+       <div class="grid-item">
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/882/original/coming-soon-advertise-alert-announcement-concept.jpg?1760511652"
+        alt="Coming soon image"
+        class="project"
+      />
+      <h3 id="thermostats">Thermostats & Smart Control Installs</h3>
 <p>We provide expert installation of thermostats and smart home controls, allowing you to optimize your HVAC system's performance and improve energy efficiency. Our team will help you choose the right products and ensure a seamless installation process.</p>
 
-<h3>Humidifiers & Indoor Air Quality Solutions</h3>
+    
+    
+    </div>
+
+       <div class="grid-item">
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/882/original/coming-soon-advertise-alert-announcement-concept.jpg?1760511652"
+        alt="Coming soon image"
+        class="project"
+      />
+      <h3 id="humidifiers">Humidifiers & Indoor Air Quality Solutions</h3>
 <p>We offer a range of humidifiers and indoor air quality solutions to enhance your home's comfort and health. We will assess your needs and recommend the best products to improve your indoor environment.</p>
 
-<h3>Service Calls & Troubleshooting</h3>
+    
+    
+    </div>
+       <div class="grid-item">
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/882/original/coming-soon-advertise-alert-announcement-concept.jpg?1760511652"
+        alt="Coming soon image"
+        class="project"
+      />
+     <h3 id="service-calls">Service Calls & Troubleshooting</h3>
 <p>We are available for service calls and troubleshooting to address any issues with your HVAC system. We’ll quickly diagnose the problem and provide effective solutions to restore your comfort.</p>
-
-<h3>Maintenance & System Tune-Ups</h3>
+    
+    
+    </div>
+       <div class="grid-item">
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/882/original/coming-soon-advertise-alert-announcement-concept.jpg?1760511652"
+        alt="Coming soon image"
+        class="project"
+      />
+      <h3>Maintenance & System Tune-Ups</h3>
 <p>We offer comprehensive maintenance and system tune-up services to keep your HVAC system running smoothly. Our team will perform thorough inspections, cleanings, and adjustments to ensure optimal performance and extend the lifespan of your equipment.</p>
+    
+    
+    </div>
+</div>
+    
+    </div>
+  </div>
+</section>
+
+
+
 
 <h2 id="about">About Us</h2>
 <p>At Valencia Home Services, we are committed to providing top-notch HVAC solutions with a focus on customer satisfaction. Our team has years of experience in the industry, and we take pride in our workmanship and attention to detail. We believe in building lasting relationships with our clients based on trust and reliability.</p>
 
-<h3>Our Mission</h3>
-<p>Our mission is to deliver high-quality HVAC services that exceed our customers' expectations. We strive to create a comfortable and healthy indoor environment for every home we serve.</p>
+<h3 id="mission">Our Mission</h3>
+<p>To deliver high-quality HVAC services that exceed our customers' expectations. We strive to create a comfortable and healthy indoor environment for every home we serve.</p>
+
+
+
+<h2 id="whychooseus">Why Choose Us</h2>
+
+<div class="grid-container-whychooseus">
+  <div class="grid-item-whychooseus">Experienced tradesmen, not salespeople</div>
+  <div class="grid-item-whychooseus">Transparent pricing with no hidden fees</div>
+  <div class="grid-item-whychooseus">Personalized service tailored to your home</div>
+  <div class="grid-item-whychooseus">Commitment to quality workmanship and customer satisfaction</div>
+</div>
+
+
+<h2 class="testimonials" id="">Read Our Testimonials</h2>
+<div class="grid-item-testimonials"><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/116/original/gear.png?1761066681" id="gear" alt="gear icon"/>“Finally, a company I can trust. Honest, reliable, and <span id="testimonials">they actually show up on time.</span>” — Sarah M.</p></div>
+<div class="grid-item-testimonials"><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/116/original/gear.png?1761066681" id="gear" alt="gear icon"/>“The work was done perfectly, and they explained everything in plain language. <span id="testimonials">Highly recommend.</span>” — James R.</p></div>
+
+
+<h2 id="connect">Connect with us</h2>
+
+
+  <p>Phone: (301) 646 9604</p>
+  <p><a href="mailto:andresmvc112@gmail.com">Email: andresmvc112@gmail.com</a></p>
+
 </body>
-
-
-<h2>Why Choose Us</h2>
-
-<ul>
-<li>Experienced tradesmen, not salespeople</li>
-<li>Transparent pricing with no hidden fees</li>
-<li>Personalized service tailored to your home</li>
-<li>Commitment to quality workmanship and customer satisfaction</li>
-</ul>
-
-<h2>Read Our Testimonials</h2>
-<p>“Finally, a company I can trust. Honest, reliable, and they actually show up on time.” — Sarah M.</p>
-<p>“The work was done perfectly, and they explained everything in plain language. Highly recommend.” — James R.</p>
-
-
-<h2>Get in Touch</h2>
-<p>Phone: (301) 646 9604</p>
-<p>Email: andresmvc112@gmail.com</p>
-<p>Schedule your service today and experience the Valencia Home Services difference!
-
-<footer>This website was designed and built by Roxane Beharry</footer>
+<footer>
+    <p>License numbers | Hours of operation | This website was designed and built by Roxane Beharry | Cogwheel images created from Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div></p>
 </html>
