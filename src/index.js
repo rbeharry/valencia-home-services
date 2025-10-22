@@ -1,4 +1,5 @@
- const dropdownButtons = document.querySelectorAll(".dropbtn");
+  // Get all dropdown buttons
+  const dropdownButtons = document.querySelectorAll(".dropbtn");
 
   dropdownButtons.forEach(button => {
     button.addEventListener("click", function (e) {
@@ -28,6 +29,5 @@
       content.style.display = "none";
     });
   });
-
 
   
