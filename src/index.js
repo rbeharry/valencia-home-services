@@ -1,38 +1,31 @@
+ const dropdownButtons = document.querySelectorAll(".dropbtn");
 
-  // Wait for the DOM to load
-  document.addEventListener("DOMContentLoaded", function() {
-    // Select all dropdown buttons
-    const dropdowns = document.querySelectorAll(".dropdown .dropbtn");
+  dropdownButtons.forEach(button => {
+    button.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent accidental link jumps
+      e.stopPropagation(); // Prevent clicks from closing immediately
 
-    dropdowns.forEach(button => {
-      button.addEventListener("click", function(e) {
-        e.preventDefault(); // prevent default anchor action
-
-        const dropdownContent = this.nextElementSibling;
-
-        // Close other dropdowns
-        document.querySelectorAll(".dropdown-content").forEach(content => {
-          if (content !== dropdownContent) {
-            content.style.display = "none";
-          }
-        });
-
-        // Toggle the clicked dropdown
-        if (dropdownContent.style.display === "block") {
-          dropdownContent.style.display = "none";
-        } else {
-          dropdownContent.style.display = "block";
+      // Close other dropdowns first
+      document.querySelectorAll(".dropdown-content").forEach(content => {
+        if (content !== this.nextElementSibling) {
+          content.style.display = "none";
         }
       });
-    });
 
-    // Close dropdown if clicked outside
-    window.addEventListener("click", function(e) {
-      if (!e.target.matches(".dropbtn") && !e.target.closest(".dropdown")) {
-        document.querySelectorAll(".dropdown-content").forEach(content => {
-          content.style.display = "none";
-        });
+      // Toggle current dropdown
+      const dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
       }
+    });
+  });
+
+  // Close dropdown when clicking outside
+  window.addEventListener("click", function () {
+    document.querySelectorAll(".dropdown-content").forEach(content => {
+      content.style.display = "none";
     });
   });
 
