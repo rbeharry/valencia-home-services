@@ -1,33 +1,29 @@
-  // Get all dropdown buttons
+
+document.addEventListener("DOMContentLoaded", function() {
   const dropdownButtons = document.querySelectorAll(".dropbtn");
 
   dropdownButtons.forEach(button => {
-    button.addEventListener("click", function (e) {
-      e.preventDefault(); // Prevent accidental link jumps
-      e.stopPropagation(); // Prevent clicks from closing immediately
+    button.addEventListener("click", function(e) {
+      e.stopPropagation();
 
-      // Close other dropdowns first
+      // Close all dropdowns first
       document.querySelectorAll(".dropdown-content").forEach(content => {
         if (content !== this.nextElementSibling) {
           content.style.display = "none";
         }
       });
 
-      // Toggle current dropdown
-      const dropdownContent = this.nextElementSibling;
-      if (dropdownContent.style.display === "block") {
-        dropdownContent.style.display = "none";
-      } else {
-        dropdownContent.style.display = "block";
-      }
+      // Toggle the clicked dropdown
+      const content = this.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
     });
   });
 
-  // Close dropdown when clicking outside
-  window.addEventListener("click", function () {
+  // Close dropdowns when clicking outside
+  document.addEventListener("click", function() {
     document.querySelectorAll(".dropdown-content").forEach(content => {
       content.style.display = "none";
     });
   });
+});
 
-  
