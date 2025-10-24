@@ -37,10 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
 menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
+  navMenu.classList.toggle('show'); // slide menu in/out
 });
