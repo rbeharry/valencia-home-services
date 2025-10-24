@@ -755,3 +755,36 @@ body {
     overflow-y: auto;    /* allow scrolling */
   }
 }
+
+.nav-menu li a {
+  color: white;            /* default color */
+  text-decoration: none;
+  transition: color 0.3s;  /* smooth color change */
+}
+
+.nav-menu li a:hover {
+  color: #ff6600;          /* your hover color */
+}
+
+/* Dropdown button */
+.nav-menu .dropbtn {
+  color: white;
+  transition: color 0.3s;
+}
+
+.nav-menu .dropbtn:hover {
+  color: #ff6600;          /* same hover color as regular links */
+}
+
+/* Dropdown links */
+.dropdown-content li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.dropdown-content li a:hover {
+  color: #ff6600;          /* hover color */
+  background-color: #555;  /* optional subtle background change */
+  border-radius: 4px;
+}
