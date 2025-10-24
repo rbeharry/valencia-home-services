@@ -1,29 +1,36 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+  const dropdowns = Array.from(document.querySelectorAll(".dropdown"));
 
-document.addEventListener("DOMContentLoaded", function() {
-  const dropdownButtons = document.querySelectorAll(".dropbtn");
+  // Toggle main menu (hamburger)
+  menuToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    navMenu.classList.toggle("show");
+  });
 
-  dropdownButtons.forEach(button => {
-    button.addEventListener("click", function(e) {
+  // Toggle dropdowns
+  dropdowns.forEach(dropdown => {
+    const btn = dropdown.querySelector(".dropbtn");
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
       e.stopPropagation();
-
-      // Close all dropdowns first
-      document.querySelectorAll(".dropdown-content").forEach(content => {
-        if (content !== this.nextElementSibling) {
-          content.style.display = "none";
-        }
-      });
-
-      // Toggle the clicked dropdown
-      const content = this.nextElementSibling;
-      content.style.display = content.style.display === "block" ? "none" : "block";
+      dropdowns.forEach(d => { if(d !== dropdown) d.classList.remove("active"); });
+      dropdown.classList.toggle("active");
     });
   });
 
-  // Close dropdowns when clicking outside
-  document.addEventListener("click", function() {
-    document.querySelectorAll(".dropdown-content").forEach(content => {
-      content.style.display = "none";
-    });
+  // Close menus when clicking outside
+  document.addEventListener("click", () => {
+    navMenu.classList.remove("show");
+    dropdowns.forEach(d => d.classList.remove("active"));
+  });
+
+  // Close with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      navMenu.classList.remove("show");
+      dropdowns.forEach(d => d.classList.remove("active"));
+    }
   });
 });
-
