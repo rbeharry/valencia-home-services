@@ -623,7 +623,7 @@ body {
     display: none;
     flex-direction: column;
     position: absolute;  /* absolute instead of fixed */
-    top: 80px;           /* position below top bar / hamburger */
+    top: 100px;           /* position below top bar / hamburger */
     left: 0;
     width: 100%;
     height: auto;        /* auto adjusts to content */
