@@ -1130,3 +1130,125 @@ body {
   .nav-menu.show {
     display: flex;
   }}
+
+  /* Hamburger icon (mobile only) */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;       /* hidden by default */
+    flex-direction: column;
+    width: 100%;
+    background: #1D1D1D;
+    margin-top: 10px;
+  }
+
+  .nav-menu.show {
+    display: flex;       /* show menu when hamburger clicked */
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  /* Dropdowns on mobile: open on click */
+  .dropdown-content {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Adjust top-bar and social icons */
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .top-bar .top-right a {
+    margin-left: 10px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .nav-menu a,
+  .dropbtn {
+    text-align: center;
+  }
+}
+
+/* Hamburger icon (mobile only) */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;       /* hidden by default */
+    flex-direction: column;
+    width: 100%;
+    background: #1D1D1D;
+    margin-top: 10px;
+  }
+
+  .nav-menu.show {
+    display: flex;       /* show menu when hamburger clicked */
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  /* Dropdowns on mobile: open on click */
+  .dropdown-content {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Adjust top-bar and social icons */
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .top-bar .top-right a {
+    margin-left: 10px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .nav-menu a,
+  .dropbtn {
+    text-align: center;
+  }
+}
