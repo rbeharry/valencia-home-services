@@ -86,3 +86,19 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+
+  // Optional: toggle dropdowns on mobile when clicked
+  const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    const button = dropdown.querySelector('.dropbtn');
+    button.addEventListener('click', () => {
+      dropdown.classList.toggle('active');
+    });
+  });

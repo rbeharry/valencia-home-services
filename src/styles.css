@@ -686,4 +686,25 @@ body {
 
   /* Stack top-bar content */
   .top-bar {
-    fle
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .top-bar .top-right {
+    margin-left: 0;
+  }
+
+  .nav-menu a,
+  .dropbtn {
+    text-align: center;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .nav-menu a,
+  .dropbtn {
+    text-align: center;
+  }
+}
