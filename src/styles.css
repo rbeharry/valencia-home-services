@@ -562,9 +562,10 @@ body {
 .logo {
   font-size: 24px;
   font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 20px;
+
 }
-
-
 
 
 .nav-menu a,
@@ -578,7 +579,7 @@ body {
 
 .nav-menu a:hover,
 .dropbtn:hover {
-  background: #444;
+  background: #1D1D1D;
   border-radius: 4px;
 }
 
@@ -586,7 +587,7 @@ body {
   max-height: 300px;       /* max height before scrolling */
   overflow-y: auto;        /* vertical scroll */
   overflow-x: hidden;      /* hide horizontal scroll */
-  background-color: #444;
+  background-color: #1D1D1D;
   flex-direction: column;
   list-style: none;
   margin: 0;
@@ -634,7 +635,7 @@ body {
     display: none;
     flex-direction: column;
     width: 100%;
-    background: #333;
+    background: #1D1D1D;
     margin-top: 10px;
   }
 
@@ -697,7 +698,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #333;
+  background: #1D1D1D;
   padding: 10px 20px;
   position: relative;
   z-index: 1000;
@@ -739,7 +740,7 @@ body {
 
 .nav-menu a:hover,
 .dropbtn:hover {
-  background: #444;
+  background: #1D1D1D;
   border-radius: 4px;
 }
 
@@ -939,6 +940,7 @@ body {
     /* Logo */
     .logo img {
       height: 60px;
+      border-radius: 10px;
     }
 
     /* Remove hamburger menu */
@@ -976,7 +978,7 @@ body {
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: #201F1E;
       list-style: none;
       padding: 10px 0;
       margin: 0;
