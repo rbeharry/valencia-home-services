@@ -62,3 +62,38 @@ $(document).ready(function(){
     }
   });
 });
+
+
+
+$(document).ready(function(){
+
+  // Hamburger toggle
+  $(".menu-toggle").click(function(){
+    $(".nav-menu").toggleClass("show");
+  });
+
+  // Dropdown toggle for mobile
+  $(".dropbtn").click(function(e){
+    if ($(window).width() <= 768) {
+      e.preventDefault();
+      $(this).parent(".dropdown").toggleClass("active");
+    }
+  });
+
+  // Smooth scrolling for anchor links
+  $("a[href^='#']").click(function(e){
+    var target = $(this).attr("href");
+    if(target.length > 1){
+      e.preventDefault();
+      $("html, body").animate({
+        scrollTop: $(target).offset().top - 70
+      }, 600);
+
+      if ($(window).width() <= 768) {
+        $(".nav-menu").removeClass("show");
+        $(".dropdown").removeClass("active");
+      }
+    }
+  });
+
+});
