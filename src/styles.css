@@ -533,31 +533,100 @@ body {
 
 .navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  background: #1D1D1D;
+  padding: 10px 20px;
 }
 
-/* make the menu items horizontal */
 .nav-menu {
-  list-style: none;
   display: flex;
-  gap: 20px; /* adds space between menu items */
+  gap: 20px;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* make sure links look clean */
-.nav-menu li a {
-  text-decoration: none;
-  color: white; /* or your preferred color */
-  font-weight: 500;
-  transition: color 0.3s ease;
+.nav-menu li {
+  position: relative;
 }
 
-/* hover effect */
-.nav-menu li a:hover {
-  color: #ffcc00;
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
 }
+
+.nav-menu a:hover {
+  color: #ff6600;
+}
+
+/* Dropdown for desktop */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #444;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 6px;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.dropdown-content li a {
+  padding: 10px 15px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* hover opens dropdown on desktop */
+}
+
+/* Hamburger icon */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ===== Mobile styles ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #1D1D1D;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  /* Dropdowns on mobile */
+  .dropdown-content {
+    position: relative;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+/* make the menu items horizontal */
+
 
 .logo {
   font-size: 24px;
@@ -694,15 +763,7 @@ body {
 }
 
 /* Adjust navbar below top-bar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #1D1D1D;
-  padding: 10px 20px;
-  position: relative;
-  z-index: 1000;
-}
+
 
 /* Logo */
 .navbar .logo {
@@ -892,11 +953,8 @@ body {
 
 
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
+
 
 /* make the menu items horizontal */
 /* Always show the menu, no hamburger */
@@ -929,13 +987,7 @@ body {
   color: #ff6600;
 }
 
- .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 30px;
-      background-color: rgba(0, 0, 0, 0.4);
-    }
+
 
     /* Logo */
     .logo img {
