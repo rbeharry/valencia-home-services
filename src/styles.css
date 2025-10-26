@@ -940,7 +940,7 @@ body {
     /* Logo */
     .logo img {
       height: 60px;
-      border-radius: 10px;
+      border-radius: 10px;;
     }
 
     /* Remove hamburger menu */
@@ -999,3 +999,49 @@ body {
     .dropdown:hover .dropdown-content {
       display: block;
     }
+
+    /* Desktop: dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+/* Mobile: dropdown toggles on click */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #1D1D1D;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: relative; /* relative for stacking inside mobile menu */
+    display: none;      /* hidden until clicked */
+  }
+
+  .dropdown.active .dropdown-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu li a {
+    padding: 12px 15px;
+  }
+}
