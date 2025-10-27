@@ -759,3 +759,77 @@ body {
     display: flex;
   }
 }
+
+/* ---------- Mobile dropdown adjustments ---------- */
+/* Only applies on small screens */
+@media (max-width: 768px) {
+
+  /* Make dropbtn fill width and be easy to tap */
+  .dropdown > .dropbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  /* caret icon on the right (optional) */
+  .dropdown > .dropbtn::after {
+    content: "\25BC";                /* down triangle */
+    margin-left: 10px;
+    font-size: 12px;
+    transform: rotate(0deg);
+    transition: transform .2s ease;
+    opacity: 0.9;
+  }
+
+  /* rotate caret when active */
+  .dropdown.active > .dropbtn::after {
+    transform: rotate(-180deg);
+  }
+
+  /* mobile dropdown content: full width, stacked, hidden initially */
+  .dropdown .dropdown-content {
+    display: none;
+    position: relative;              /* flow inside mobile menu */
+    background: #2b2b2b;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+  }
+
+  .dropdown .dropdown-content li a {
+    display: block;
+    padding: 12px 16px;
+    color: white;
+    text-decoration: none;
+    border-top: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .dropdown .dropdown-content li a:hover {
+    background: rgba(255,102,0,0.08);
+    color: #ff6600;
+  }
+
+  /* Show dropdown when parent has .active */
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  /* ensure nav-menu stacks under navbar */
+  .nav-menu {
+    position: absolute;
+    top: 60px;   /* adjust to match your header height */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+}
+
