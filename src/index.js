@@ -117,3 +117,61 @@ $(function () {
     }
   });
 });
+
+
+
+$(function() {
+  // Toggle hamburger menu
+  $('.menu-toggle').on('click', function(e) {
+    e.stopPropagation();
+    $('#nav-menu').toggleClass('show');
+    // close any open dropdowns when toggling main menu closed
+    if (!$('#nav-menu').hasClass('show')) {
+      $('.dropdown').removeClass('active');
+      $('.dropdown .dropdown-content').slideUp(150);
+    }
+  });
+
+  // Prevent main clicks from closing immediately
+  $('#nav-menu').on('click', function(e){
+    e.stopPropagation();
+  });
+
+  // Dropdown button click (mobile & tablet)
+  $('.dropdown .dropbtn').on('click', function(e) {
+    // If desktop (hover) we don't want to prevent normal anchor navigation.
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var $parent = $(this).closest('.dropdown');
+
+      // close other dropdowns
+      $('.dropdown').not($parent).removeClass('active').find('.dropdown-content').slideUp(150);
+
+      // toggle requested dropdown
+      $parent.toggleClass('active');
+      $parent.find('.dropdown-content').stop(true, true).slideToggle(150);
+    }
+    // otherwise allow desktop anchor (hover) behaviour
+  });
+
+  // prevent clicks inside dropdown content from closing (very important)
+  $('.dropdown .dropdown-content').on('click', function(e) { e.stopPropagation(); });
+
+  // click outside: close all
+  $(document).on('click', function() {
+    $('#nav-menu').removeClass('show');
+    $('.dropdown').removeClass('active');
+    $('.dropdown .dropdown-content').slideUp(150);
+  });
+
+  // optional: close on escape key
+  $(document).on('keyup', function(e){
+    if (e.key === 'Escape') {
+      $('#nav-menu').removeClass('show');
+      $('.dropdown').removeClass('active');
+      $('.dropdown .dropdown-content').slideUp(150);
+    }
+  });
+});
