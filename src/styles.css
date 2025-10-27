@@ -1246,3 +1246,17 @@ body {
     color: #ff6600;          /* text changes color */
     background-color: rgba(255,102,0,0.08); /* subtle highlight */
 }
+
+/* Center the Book Online button on mobile */
+@media (max-width: 768px) {
+  .top-bar-left {
+    display: flex;
+    flex-direction: column; /* stack items vertically */
+    align-items: center;    /* center horizontally */
+    gap: 10px;              /* optional spacing between items */
+  }
+
+  .top-bar-left .hcp-button {
+    margin: 0 auto;         /* center the button itself */
+  }
+}
