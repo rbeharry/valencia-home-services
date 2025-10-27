@@ -23,3 +23,9 @@ $(document).ready(function() {
     $(".dropdown").removeClass("active");
   });
 });
+
+// Mobile link active state
+$(".dropdown .dropdown-content li a").on("touchstart", function() {
+  $(this).addClass("active");
+  setTimeout(() => $(this).removeClass("active"), 300); // temporary highlight
+});
