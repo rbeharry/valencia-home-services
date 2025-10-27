@@ -1262,20 +1262,9 @@ body {
 }
 
 /* Tablet devices */
-@media (max-width: 900px) {
-  .hcp-button {
-    padding-top: 8px;
-    padding-bottom: 12px;
-    font-size: 15px;
-  }
-}
-
-/* Mobile devices */
+/* Add space between Call us text and Book Online button on mobile */
 @media (max-width: 768px) {
-  .hcp-button {
-    padding-top: 5px;       /* less top padding */
-    padding-bottom: 15px;   /* more bottom padding */
-    font-size: 14px;
-    width: 80%;             /* optional: make button slightly narrower */
+  .top-bar-left .hcp-button {
+    margin-top: 15px; /* increase this value to add more space */
   }
 }
