@@ -934,37 +934,99 @@ body {
   .nav-menu li { width: 100%; }
 
   /* Mobile dropdown: make items inline in the stacked menu (not absolute) */
-@media (max-width:768px) {
+/* ---------- Mobile Hamburger Menu ---------- */
+@media (max-width: 768px) {
 
-  /* Make the dropdown items full width and remove extra padding/margin */
+  /* Show hamburger icon */
+  .menu-toggle {
+    display: block;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    margin-left: auto; /* pushes it to the right */
+  }
+
+  /* Hide menu by default */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #1D1D1D;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;   /* below navbar */
+    left: 0;
+    z-index: 1000;
+  }
+
+  /* Show menu when toggled */
+  .nav-menu.show {
+    display: flex;
+  }
+
+  /* Make each main menu item full width */
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu a,
+  .dropbtn {
+    display: block;
+    padding: 12px 20px; /* aligns text uniformly */
+    color: white;
+    text-decoration: none;
+    text-align: left;
+  }
+
+  .nav-menu a:hover,
+  .dropbtn:hover {
+    background-color: rgba(255, 102, 0, 0.1);
+    color: #ff6600;
+  }
+
+  /* Dropdown adjustments */
+  .dropdown {
+    width: 100%;
+  }
+
   .dropdown-content {
-    position: static;         /* stacked in flow */
-    display: none;            /* hidden by default */
-    margin: 0;                /* remove any margin */
-    padding: 0;               /* remove extra padding */
-    background: transparent;  /* optional: same background as parent */
+    display: none;         /* hidden by default */
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: #1D1D1D;
   }
 
-  .dropdown.open > .dropdown-content {
-    display: block;
+  .dropdown.active > .dropdown-content {
+    display: flex;
   }
 
-  /* Make dropdown list items align with parent menu items */
+  /* Dropdown items styling */
   .dropdown-content li a {
-    display: block;
-    padding: 12px 20px;      /* same left/right padding as main menu items */
-    margin: 0;                /* remove any extra margin */
-    text-align: left;         /* ensure left-aligned text */
-    border-top: 1px solid rgba(255,255,255,0.03); /* optional separator */
+    padding: 12px 20px;   /* same padding as main menu */
+    margin: 0;
+    text-align: left;
+    border-top: 1px solid rgba(255,255,255,0.03); /* subtle separator */
   }
 
-  /* Optional: caret rotation */
-  .dropdown > .dropbtn::after {
-    float: right;
-    transform: rotate(0deg);
-    transition: transform .2s;
+  .dropdown-content li a:hover {
+    background-color: rgba(255,102,0,0.1);
+    color: #ff6600;
   }
-  .dropdown.open > .dropbtn::after {
+
+  /* Caret on the right */
+  .dropdown > .dropbtn::after {
+    content: "\25BC"; /* down triangle */
+    float: right;
+    margin-left: 10px;
+    font-size: 12px;
+    transition: transform 0.2s ease;
+  }
+
+  /* Rotate caret when open */
+  .dropdown.active > .dropbtn::after {
     transform: rotate(-180deg);
   }
 }
