@@ -56,3 +56,27 @@ $(document).ready(function() {
     }
   });
 });
+
+
+$(document).ready(function() {
+  // Toggle mobile menu
+  $(".menu-toggle").click(function() {
+    $(".nav-menu").toggleClass("show");
+  });
+
+  // Toggle dropdowns on mobile
+  $(".dropdown .dropbtn").click(function(e) {
+    e.preventDefault();
+    $(this).parent().toggleClass("active");
+    $(this).siblings(".dropdown-content").slideToggle(200);
+    $(this).parent().siblings().removeClass("active").find(".dropdown-content").slideUp(200);
+  });
+
+  // Close dropdowns when clicking outside
+  $(document).click(function(e) {
+    if (!$(e.target).closest(".navbar").length) {
+      $(".dropdown-content").slideUp(200);
+      $(".dropdown").removeClass("active");
+    }
+  });
+});
