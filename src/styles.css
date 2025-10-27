@@ -1098,5 +1098,74 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;       /* stack logo and menu vertically */
+    align-items: flex-start;      /* left-align items if you want */
+    padding-top: 10px;            /* extra spacing above menu */
+  }
+
+  .nav-menu {
+    top: 320px; /* push menu below the 300px logo + some spacing */
+  }
+
+  .menu-toggle {
+    top: 310px; /* align hamburger button below the logo */
+  }
+}
 
 
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;       /* stack logo and menu */
+    align-items: center;          /* center logo and menu items */
+    position: relative;
+    padding: 10px 20px;
+  }
+
+  .logo img {
+    max-height: 300px;            /* your tall logo */
+    width: auto;
+  }
+
+  .menu-toggle {
+    margin-top: 10px;             /* spacing below logo */
+    position: relative;           /* keeps it below the logo */
+    top: auto;                     /* reset any previous top values */
+    right: auto;
+  }
+
+  .nav-menu {
+    position: relative;           /* flows naturally below logo */
+    top: auto;                    /* reset previous absolute positioning */
+    left: auto;
+    right: auto;
+    width: 100%;
+    flex-direction: column;
+    display: none;                /* hidden until toggled */
+    margin-top: 10px;             /* spacing between logo and menu */
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu a,
+  .dropbtn {
+    padding: 12px 20px;           /* uniform spacing */
+    text-align: center;           /* optional */
+  }
+
+  .dropdown .dropdown-content {
+    position: relative;           /* flows inside nav-menu */
+    max-height: 250px;            /* scrollable if needed */
+    overflow-y: auto;
+    width: 100%;
+  }
+}
