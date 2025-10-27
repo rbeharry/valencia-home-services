@@ -1206,7 +1206,7 @@ body {
   text-decoration: none;
 }}
 
-/* Hide hamburger on desktop */
+/* Hamburger hidden on desktop */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -1214,44 +1214,52 @@ body {
   color: white;
 }
 
-/* Mobile styles */
+/* Mobile: <=768px */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;      /* show hamburger */
+    display: block;
   }
 
   .nav-menu {
-    display: none;       /* hidden initially */
+    display: none; /* hidden until toggled */
     flex-direction: column;
     width: 100%;
     background-color: #333;
     position: absolute;
-    top: 100%;
+    top: 60px; /* adjust based on navbar height */
     left: 0;
     padding: 10px 0;
+    z-index: 1000;
   }
 
   .nav-menu.show {
-    display: flex;       /* shown when toggled */
+    display: flex;
   }
 
   .nav-menu li {
     width: 100%;
   }
 
-  /* Dropdowns open on click */
-  .dropdown:hover .dropdown-content {
-    display: none;       /* disable hover on mobile */
+  .dropdown-content {
+    position: relative;
+    background-color: #444;
+    display: none; /* hidden until clicked */
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
   }
 
   .dropdown.active .dropdown-content {
     display: flex;
-    flex-direction: column;
   }
 
-  .dropdown-content {
-    position: relative;
-    background-color: #444;
-    min-width: 100%;
+  .dropdown .dropbtn {
+    width: 100%;
+    text-align: left;
+    padding-left: 15px;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
   }
 }

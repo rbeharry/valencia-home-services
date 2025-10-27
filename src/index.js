@@ -40,9 +40,9 @@ $(document).ready(function() {
     $(".nav-menu").toggleClass("show");
   });
 
-  // Toggle dropdowns on mobile
+  // Toggle dropdown on mobile
   $(".dropdown .dropbtn").click(function(e) {
-    if (window.innerWidth <= 768) {
+    if ($(window).width() <= 768) {
       e.preventDefault();
       $(this).parent().toggleClass("active");
     }
@@ -50,9 +50,9 @@ $(document).ready(function() {
 
   // Close dropdown if clicked outside
   $(document).click(function(e) {
-    if (!$(e.target).closest(".dropdown").length) {
+    if (!$(e.target).closest(".dropdown, .menu-toggle").length) {
       $(".dropdown").removeClass("active");
+      $(".nav-menu").removeClass("show");
     }
   });
 });
-
