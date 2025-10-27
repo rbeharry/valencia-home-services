@@ -872,3 +872,60 @@ body {
     text-align: center;
   }
 }
+
+
+/* ---------- Dropdown Menu ---------- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #201F1E;
+  min-width: 180px;
+  padding: 10px 0;
+  border-radius: 8px;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.dropdown-content li {
+  text-align: left;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 8px 12px;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #333;
+}
+
+/* ---------- MOBILE FIX ---------- */
+@media (max-width: 768px) {
+  .dropdown-content {
+    position: static;         /* removes absolute positioning */
+    background: none;         /* blends with menu background */
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .dropdown-content a {
+    padding: 10px 0;
+    border-top: 1px solid #333;
+  }
+
+  .dropdown-content li:last-child a {
+    border-bottom: 1px solid #333;
+  }
+
+  .dropdown .dropbtn {
+    width: 100%;
+    text-align: center;
+  }
+}
