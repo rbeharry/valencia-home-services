@@ -1,20 +1,37 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navMenu = document.querySelector(".nav-menu");
   const dropdowns = document.querySelectorAll(".dropdown");
 
-  dropdowns.forEach(dropdown => {
+  // Hamburger toggle
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+
+  // Dropdown toggle
+  dropdowns.forEach((dropdown) => {
     const button = dropdown.querySelector(".dropbtn");
+
     button.addEventListener("click", (e) => {
-      e.preventDefault(); // Prevent link from jumping
-      dropdown.classList.toggle("active"); // Toggle open/close
+      e.stopPropagation(); // prevent clicks from bubbling up
+      dropdown.classList.toggle("active"); // open/close this one
+      dropdowns.forEach((d) => {
+        if (d !== dropdown) d.classList.remove("active"); // close others
+      });
     });
   });
 
-  // Optional: close dropdowns when clicking outside
+  // Close dropdowns when clicking outside
   document.addEventListener("click", (e) => {
-    dropdowns.forEach(dropdown => {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove("active"); // Close dropdown
-      }
-    });
+    if (!e.target.closest(".dropdown")) {
+      dropdowns.forEach((d) => d.classList.remove("active"));
+    }
+  });
+
+  // Close dropdowns on scroll (optional)
+  window.addEventListener("scroll", () => {
+    dropdowns.forEach((d) => d.classList.remove("active"));
   });
 });
+
+

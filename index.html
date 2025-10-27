@@ -70,8 +70,8 @@
   <ul class="nav-menu" id="nav-menu">
     <li><a href="#home">Home</a></li>
    
-    <li class="dropdown">
-      <a href="#dropbtn" class="dropbtn">Our Services</a>
+      <li class="dropdown">
+      <a href="#about" class="dropbtn">Our Services</a>
       <ul class="dropdown-content">
         <li><a href="#tank">Tank Water Heater</a></li>
         <li><a href="#furnace">Furnace</a></li>
@@ -84,7 +84,7 @@
       <li><a href="#maintenance">Maintenance & System Tune-Ups</a></li>
  
         
-      </ul>
+         </ul>
        <li class="dropdown">
       <a href="#about" class="dropbtn">About Us</a>
       <ul class="dropdown-content">
@@ -97,6 +97,9 @@
     <li><a href="#connect">Connect With Us</a></li>
   </ul>
 </nav>
+
+
+
 
 <main>
   <!-- Example Section -->
@@ -269,7 +272,7 @@ Powered by Valencia.</p>
 
 <!--Start of Housecallpro Online booking button--> <button data-token="e6ee2495fb3e4f5bb3458d7d1afe6f25" data-orgname="Valencia-Home-Services-LLC" class="hcp-button" onClick="HCPWidget.openModal()"> Book online </button> <script async src="https://online-booking.housecallpro.com/script.js?token=e6ee2495fb3e4f5bb3458d7d1afe6f25&orgName=Valencia-Home-Services-LLC"> </script> <!--End of Housecallpro Online booking button-->
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src ="src/index.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -282,6 +285,36 @@ Powered by Valencia.</p>
     $("#logo").delay(1000).fadeIn(2500);   // then fade in logo slightly after
   });
 </script>
+<script>
+$(document).ready(function() {
+  // Fade-in animations (your existing code)
+  $(".navbar").fadeIn(1000);
+  $("#logo").delay(1000).fadeIn(2500);
+
+  // Dropdown toggle logic
+  $(".dropdown .dropbtn").on("click", function(e) {
+    e.preventDefault();
+    e.stopPropagation(); // stop bubbling up so it doesn't close immediately
+    
+    const dropdownContent = $(this).siblings(".dropdown-content");
+
+    // Close all other open dropdowns first
+    $(".dropdown-content").not(dropdownContent).slideUp(200);
+
+    // Toggle the clicked one
+    dropdownContent.slideToggle(200);
+  });
+
+  // Close dropdowns when clicking anywhere else on the page
+  $(document).on("click", function() {
+    $(".dropdown-content").slideUp(200);
+  });
+});
+</script>
+<script>
+  
+</script>
+
 </body>
 <footer>
     <p>License numbers | Hours of operation | This website was designed and built by <a href="https://www.roxiecodes.com">Roxane Beharry</a> 
