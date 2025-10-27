@@ -569,13 +569,8 @@ body {
 }
 
 /* ---------- Navbar ---------- */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #1D1D1D;
-  padding: 10px 20px;
-}
+
+
 
 .navbar .logo img {
   height: 60px;
@@ -643,42 +638,6 @@ body {
 }
 
 /* Hamburger menu for mobile */
-.navbar {
-  display: flex;
-  justify-content: space-between;  /* spreads logo left, menu right */
-  align-items: center;              /* vertically align both */
-  padding: 10px 20px;
-  background-color: #1D1D1D;
-}
-
-/* Logo image should not take up too much space */
-.logo img {
-  height: 50px;
-  width: auto;
-}
-
-/* Hamburger menu */
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-}
-
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    margin-left: auto;  /* push it to the right */
-  }
-
- 
-
-  .nav-menu.show {
-    display: flex;
-  }
-}
-
 
 /* ---------- Responsive Styles ---------- */
 @media (max-width: 768px) {
@@ -864,3 +823,52 @@ body {
   }
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between; /* logo left, hamburger/menu right */
+  align-items: center;
+  background-color: #1D1D1D;
+  padding: 10px 20px;
+  position: relative;
+}
+
+
+/* Logo image should not take up too much space */
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* Hamburger menu */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: #1D1D1D;
+    position: absolute;
+    top: 70px; /* directly below navbar */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu li {
+    text-align: center;
+  }
+}
