@@ -934,58 +934,37 @@ body {
   .nav-menu li { width: 100%; }
 
   /* Mobile dropdown: make items inline in the stacked menu (not absolute) */
-  .dropdown > .dropbtn {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 18px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    text-align: left;
-    cursor: pointer;
-  }
+@media (max-width:768px) {
 
-  /* caret */
-  .dropdown > .dropbtn::after {
-    content: "\25BC";
-    margin-left: 8px;
-    transition: transform .2s ease;
-    font-size: 12px;
-  }
-  .dropdown.active > .dropbtn::after { transform: rotate(-180deg); }
-
-  /* Put dropdown-content into normal flow so it lines up with the stacked menu */
+  /* Make the dropdown items full width and remove extra padding/margin */
   .dropdown-content {
-    position: static;
-    display: none;              /* will show when .active applied */
-    background: transparent;
-    padding: 0;
-    margin: 0;
-    min-width: auto;
-    border-radius: 0;
+    position: static;         /* stacked in flow */
+    display: none;            /* hidden by default */
+    margin: 0;                /* remove any margin */
+    padding: 0;               /* remove extra padding */
+    background: transparent;  /* optional: same background as parent */
   }
 
-  .dropdown.active > .dropdown-content {
+  .dropdown.open > .dropdown-content {
     display: block;
   }
 
+  /* Make dropdown list items align with parent menu items */
   .dropdown-content li a {
-    padding: 10px 18px;
-    border-top: 1px solid rgba(255,255,255,0.04);
-    color: white;
-    background: none;
+    display: block;
+    padding: 12px 20px;      /* same left/right padding as main menu items */
+    margin: 0;                /* remove any extra margin */
+    text-align: left;         /* ensure left-aligned text */
+    border-top: 1px solid rgba(255,255,255,0.03); /* optional separator */
   }
-  .dropdown-content li a:hover { background: rgba(255,102,0,0.06); color: #ff6600; }
 
-  /* remove desktop hover behavior on mobile */
-  .dropdown:hover > .dropdown-content { display: none; }
-}
-
-/* Keep desktop unchanged (redundant safety) */
-@media (min-width: 769px) {
-  .nav-menu { display: flex !important; position: static; top: auto; background: transparent; }
-  .menu-toggle { display: none !important; }
+  /* Optional: caret rotation */
+  .dropdown > .dropbtn::after {
+    float: right;
+    transform: rotate(0deg);
+    transition: transform .2s;
+  }
+  .dropdown.open > .dropbtn::after {
+    transform: rotate(-180deg);
+  }
 }
