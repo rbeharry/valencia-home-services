@@ -35,12 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(document).ready(function() {
-  // Toggle mobile menu
+  // Hamburger toggle
   $(".menu-toggle").click(function() {
     $(".nav-menu").toggleClass("show");
   });
 
-  // Toggle dropdown on mobile
+  // Dropdown toggle on mobile
   $(".dropdown .dropbtn").click(function(e) {
     if ($(window).width() <= 768) {
       e.preventDefault();
@@ -48,11 +48,11 @@ $(document).ready(function() {
     }
   });
 
-  // Close dropdown if clicked outside
+  // Close menu if clicked outside
   $(document).click(function(e) {
-    if (!$(e.target).closest(".dropdown, .menu-toggle").length) {
-      $(".dropdown").removeClass("active");
+    if (!$(e.target).closest(".navbar, .menu-toggle").length) {
       $(".nav-menu").removeClass("show");
+      $(".dropdown").removeClass("active");
     }
   });
 });
