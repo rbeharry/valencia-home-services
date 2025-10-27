@@ -1,82 +1,72 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navMenu = document.querySelector(".nav-menu");
-  const dropdowns = document.querySelectorAll(".dropdown");
+$(document).ready(function() {
 
+  // Toggle hamburger menu
+  $(".menu-toggle").on("click", function(e) {
+    e.stopPropagation(); // stop bubbling
+    $(".nav-menu").toggleClass("show");
+  });
+
+  // Toggle dropdown menus
+  $(".dropdown .dropbtn").on("click", function(e) {
+    e.preventDefault();
+    e.stopPropagation(); // stop bubbling
+
+    var $dropdown = $(this).parent();
+
+    // Close other dropdowns
+    $(".dropdown").not($dropdown).removeClass("active")
+      .children(".dropdown-content").stop(true, true).slideUp(200);
+
+    // Toggle this dropdown
+    if ($dropdown.hasClass("active")) {
+      $dropdown.removeClass("active");
+      $dropdown.children(".dropdown-content").stop(true, true).slideUp(200);
+    } else {
+      $dropdown.addClass("active");
+      $dropdown.children(".dropdown-content").stop(true, true).slideDown(200);
+    }
+  });
+
+  // Stop clicks inside dropdown content from closing menus
+  $(".dropdown .dropdown-content").on("click", function(e) {
+    e.stopPropagation();
+  });
+
+  // Click outside closes all menus
+  $(document).on("click", function() {
+    $(".nav-menu").removeClass("show");
+    $(".dropdown").removeClass("active")
+      .children(".dropdown-content").stop(true, true).slideUp(200);
+  });
+});
+
+
+$(document).ready(function() {
   // Hamburger toggle
-  menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("show");
+  $(".menu-toggle").click(function(e) {
+    e.stopPropagation();
+    $(".nav-menu").toggleClass("show");
   });
 
   // Dropdown toggle
-  dropdowns.forEach((dropdown) => {
-    const button = dropdown.querySelector(".dropbtn");
-
-    button.addEventListener("click", (e) => {
-      e.stopPropagation(); // prevent clicks from bubbling up
-      dropdown.classList.toggle("active"); // open/close this one
-      dropdowns.forEach((d) => {
-        if (d !== dropdown) d.classList.remove("active"); // close others
-      });
-    });
-  });
-
-  // Close dropdowns when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".dropdown")) {
-      dropdowns.forEach((d) => d.classList.remove("active"));
-    }
-  });
-
-  // Close dropdowns on scroll (optional)
-  window.addEventListener("scroll", () => {
-    dropdowns.forEach((d) => d.classList.remove("active"));
-  });
-});
-
-$(document).ready(function() {
-  // Hamburger toggle
-  $(".menu-toggle").click(function() {
-    $(".nav-menu").toggleClass("show");
-  });
-
-  // Dropdown toggle on mobile
-  $(".dropdown .dropbtn").click(function(e) {
-    if ($(window).width() <= 768) {
-      e.preventDefault();
-      $(this).parent().toggleClass("active");
-    }
-  });
-
-  // Close menu if clicked outside
-  $(document).click(function(e) {
-    if (!$(e.target).closest(".navbar, .menu-toggle").length) {
-      $(".nav-menu").removeClass("show");
-      $(".dropdown").removeClass("active");
-    }
-  });
-});
-
-
-$(document).ready(function() {
-  // Toggle mobile menu
-  $(".menu-toggle").click(function() {
-    $(".nav-menu").toggleClass("show");
-  });
-
-  // Toggle dropdowns on mobile
   $(".dropdown .dropbtn").click(function(e) {
     e.preventDefault();
-    $(this).parent().toggleClass("active");
-    $(this).siblings(".dropdown-content").slideToggle(200);
-    $(this).parent().siblings().removeClass("active").find(".dropdown-content").slideUp(200);
+    e.stopPropagation();
+    var $dropdown = $(this).parent();
+    $(".dropdown").not($dropdown).removeClass("active").find(".dropdown-content").slideUp(200);
+    $dropdown.toggleClass("active");
+    $dropdown.find(".dropdown-content").slideToggle(200);
   });
 
-  // Close dropdowns when clicking outside
-  $(document).click(function(e) {
-    if (!$(e.target).closest(".navbar").length) {
-      $(".dropdown-content").slideUp(200);
-      $(".dropdown").removeClass("active");
-    }
+  // Prevent dropdown clicks from closing
+  $(".dropdown .dropdown-content").click(function(e) {
+    e.stopPropagation();
+  });
+
+  // Click outside closes everything
+  $(document).click(function() {
+    $(".nav-menu").removeClass("show");
+    $(".dropdown-content").slideUp(200);
+    $(".dropdown").removeClass("active");
   });
 });
