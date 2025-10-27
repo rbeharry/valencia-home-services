@@ -313,7 +313,29 @@ $(document).ready(function() {
 });
 </script>
 <script>
-  
+  $(document).ready(function() {
+  // Toggle mobile menu
+  $(".menu-toggle").click(function() {
+    $(".nav-menu").toggleClass("show");
+  });
+
+  // Toggle dropdown on mobile
+  $(".dropdown .dropbtn").click(function(e) {
+    if ($(window).width() <= 768) {
+      e.preventDefault();
+      $(this).parent().toggleClass("active");
+    }
+  });
+
+  // Close dropdown if clicked outside
+  $(document).click(function(e) {
+    if (!$(e.target).closest(".dropdown, .menu-toggle").length) {
+      $(".dropdown").removeClass("active");
+      $(".nav-menu").removeClass("show");
+    }
+  });
+});
+
 </script>
 
 </body>
