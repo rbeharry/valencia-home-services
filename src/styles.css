@@ -1265,6 +1265,6 @@ body {
 /* Add space between Call us text and Book Online button on mobile */
 @media (max-width: 768px) {
   .top-bar-left .hcp-button {
-    margin-top: 15px; /* increase this value to add more space */
+    margin-bottom: 15px; /* increase this value to add more space */
   }
 }
