@@ -573,7 +573,8 @@ body {
 
 
 .navbar .logo img {
-  height: 60px;
+     height: auto;  /* desired height */
+    width: 300px;   
   border-radius: 10px;
 }
 
@@ -602,10 +603,11 @@ body {
 
 .nav-menu a:hover,
 .dropbtn:hover {
-  color: #ff6600;
-  background: #1D1D1D;
+   color: #ff6600;       /* new text color */
+  background: transparent; 
+}/* 
   border-radius: 4px;
-}
+}}
 
 /* Dropdown menu */
 .dropdown-content {
@@ -917,24 +919,7 @@ body {
   .navbar { position: relative; padding-right: 60px; } /* leave room for hamburger */
 
   /* mobile nav - full width stacked under navbar */
-  .nav-menu {
-    display: none;               /* hidden until toggled */
-    position: absolute;
-    top: 60px;                   /* adjust to sit below navbar */
-    left: 0;
-    right: 0;
-    background: #1D1D1D;
-    flex-direction: column;
-    margin: 0;
-    padding: 8px 0;
-    z-index: 1050;
-  }
-  .nav-menu.show { display: flex; }
-
-  .nav-menu li { width: 100%; }
-
-  /* Mobile dropdown: make items inline in the stacked menu (not absolute) */
-/* ---------- Mobile Hamburger Menu ---------- */
+ /* ---------- Mobile Hamburger Menu ---------- */
 @media (max-width: 768px) {
 
   /* Show hamburger icon */
@@ -1030,3 +1015,88 @@ body {
     transform: rotate(-180deg);
   }
 }
+
+}
+
+/* Scrollable dropdown fix */
+@media (max-width: 768px) {
+  .dropdown .dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: relative;        /* was absolute */
+    max-height: calc(100vh - 70px); /* full viewport minus navbar */
+    overflow-y: auto;          /* enables scrolling */
+    background-color: #2b2b2b;
+    border-radius: 8px;
+    z-index: 1000;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: flex;
+  }
+}
+
+/* Desktop scrollable dropdown */
+@media (min-width: 769px) {
+  .dropdown-content {
+    max-height: 300px;      /* adjust height as needed */
+    overflow-y: auto;       /* enables vertical scroll */
+    overflow-x: hidden;     /* prevent horizontal scroll */
+  }
+
+  /* Optional: nicer scrollbar */
+  .dropdown-content::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .dropdown-content::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 102, 0, 0.8);
+    border-radius: 3px;
+  }
+}
+
+/* Remove background hover effect and just change text color */
+
+/* Desktop navbar links: only text color changes */
+.nav-menu > li > a,
+.nav-menu > li > .dropbtn {
+  color: white;
+  background: transparent;  /* make sure background is transparent */
+  transition: color 0.3s;   /* smooth color change */
+}
+
+.nav-menu > li > a:hover,
+.nav-menu > li > .dropbtn:hover {
+  color: #ff6600;           /* change only text color */
+  background: transparent;   /* ensure no background color */
+}
+
+/* Desktop dropdown links: only text color changes */
+.dropdown-content li a {
+  color: white;
+  background: transparent;  /* default background */
+}
+
+.dropdown-content li a:hover {
+  color: #ff6600;           /* text color on hover */
+  background: transparent;   /* don't change background */
+}
+
+/* Mobile dropdown links: same behavior */
+@media (max-width: 768px) {
+  .nav-menu li a,
+  .nav-menu li .dropbtn,
+  .dropdown-content li a {
+    background: transparent;   /* no background on hover */
+  }
+
+  .nav-menu li a:hover,
+  .nav-menu li .dropbtn:hover,
+  .dropdown-content li a:hover {
+    color: #ff6600;           /* only text color changes */
+    background: transparent;
+  }
+}
+
+
+
