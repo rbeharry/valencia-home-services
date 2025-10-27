@@ -35,12 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(document).ready(function() {
-  // Hamburger toggle
+  // Toggle mobile menu
   $(".menu-toggle").click(function() {
     $(".nav-menu").toggleClass("show");
   });
 
-  // Dropdown toggle on mobile
+  // Toggle dropdowns on mobile
   $(".dropdown .dropbtn").click(function(e) {
     if (window.innerWidth <= 768) {
       e.preventDefault();
@@ -48,7 +48,7 @@ $(document).ready(function() {
     }
   });
 
-  // Close dropdowns when clicking outside
+  // Close dropdown if clicked outside
   $(document).click(function(e) {
     if (!$(e.target).closest(".dropdown").length) {
       $(".dropdown").removeClass("active");

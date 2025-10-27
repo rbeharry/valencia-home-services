@@ -1206,104 +1206,42 @@ body {
   text-decoration: none;
 }}
 
-/* ---------- Desktop remains unchanged ---------- */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #333;
-  padding: 10px 20px;
-  position: relative;
-  z-index: 1000;
-}
-
-.logo img {
-  height: 60px;
-  border-radius: 10px;
-}
-
-.nav-menu {
-  display: flex;          /* horizontal menu for desktop */
-  list-style: none;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-menu li {
-  position: relative;
-}
-
-.nav-menu a, .dropbtn {
-  color: white;
-  text-decoration: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.nav-menu a:hover, .dropbtn:hover {
-  color: #ff6600;
-}
-
-/* Dropdown menus */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #333;
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-  border-radius: 8px;
-}
-
-.dropdown-content li a {
-  padding: 10px 15px;
-  color: white;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;         /* Desktop dropdown works on hover */
-}
-
-/* ---------- Mobile Styles ---------- */
+/* Hide hamburger on desktop */
 .menu-toggle {
   display: none;
   font-size: 28px;
-  color: white;
   cursor: pointer;
+  color: white;
 }
 
+/* Mobile styles */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;       /* show hamburger */
+    display: block;      /* show hamburger */
   }
 
   .nav-menu {
-    display: none;        /* hidden until toggled */
+    display: none;       /* hidden initially */
     flex-direction: column;
     width: 100%;
-    background: #333;
+    background-color: #333;
     position: absolute;
     top: 100%;
     left: 0;
     padding: 10px 0;
-    gap: 0;
   }
 
   .nav-menu.show {
-    display: flex;        /* shown when toggled */
+    display: flex;       /* shown when toggled */
   }
 
   .nav-menu li {
     width: 100%;
   }
 
-  /* Dropdowns on mobile open on click */
+  /* Dropdowns open on click */
   .dropdown:hover .dropdown-content {
-    display: none;        /* disable hover for mobile */
+    display: none;       /* disable hover on mobile */
   }
 
   .dropdown.active .dropdown-content {
