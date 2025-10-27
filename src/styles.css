@@ -1206,117 +1206,114 @@ body {
   text-decoration: none;
 }}
 
+/* ---------- Desktop remains unchanged ---------- */
 .navbar {
-  background-color: #333;
-  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  padding: 10px 20px;
   position: relative;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 60px;
+  border-radius: 10px;
 }
 
 .nav-menu {
+  display: flex;          /* horizontal menu for desktop */
   list-style: none;
+  gap: 20px;
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: 20px;
 }
 
 .nav-menu li {
   position: relative;
 }
 
-.dropbtn {
-  background: none;
-  border: none;
+.nav-menu a, .dropbtn {
   color: white;
-  font-size: 16px;
+  text-decoration: none;
+  padding: 8px 12px;
   cursor: pointer;
+  font-weight: 500;
 }
 
+.nav-menu a:hover, .dropbtn:hover {
+  color: #ff6600;
+}
+
+/* Dropdown menus */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #444;
-  min-width: 180px;
   top: 100%;
   left: 0;
-  z-index: 10;
+  background: #333;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 8px;
 }
 
 .dropdown-content li a {
+  padding: 10px 15px;
   color: white;
-  padding: 10px;
-  display: block;
-  text-decoration: none;
 }
 
-.dropdown-content li a:hover {
-  background-color: #555;
+.dropdown:hover .dropdown-content {
+  display: block;         /* Desktop dropdown works on hover */
 }
 
-/* Show dropdown when .active is applied */
-.dropdown.active .dropdown-content {
-  display: block;
-}
-
-/* Mobile menu */
+/* ---------- Mobile Styles ---------- */
 .menu-toggle {
   display: none;
-  cursor: pointer;
-  font-size: 24px;
+  font-size: 28px;
   color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: block;       /* show hamburger */
   }
 
   .nav-menu {
-    display: none;
+    display: none;        /* hidden until toggled */
     flex-direction: column;
-    background-color: #333;
+    width: 100%;
+    background: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px 0;
+    gap: 0;
   }
 
   .nav-menu.show {
+    display: flex;        /* shown when toggled */
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  /* Dropdowns on mobile open on click */
+  .dropdown:hover .dropdown-content {
+    display: none;        /* disable hover for mobile */
+  }
+
+  .dropdown.active .dropdown-content {
     display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown-content {
+    position: relative;
+    background-color: #444;
+    min-width: 100%;
   }
 }
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  min-width: 200px;
-  z-index: 1;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.dropdown-content li a {
-  color: white;
-  padding: 10px 15px;
-  display: block;
-  text-decoration: none;
-}
-
-.dropdown-content li a:hover {
-  background-color: #444;
-}
-
-
-

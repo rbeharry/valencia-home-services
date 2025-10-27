@@ -34,4 +34,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+$(document).ready(function() {
+  // Hamburger toggle
+  $(".menu-toggle").click(function() {
+    $(".nav-menu").toggleClass("show");
+  });
+
+  // Dropdown toggle on mobile
+  $(".dropdown .dropbtn").click(function(e) {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      $(this).parent().toggleClass("active");
+    }
+  });
+
+  // Close dropdowns when clicking outside
+  $(document).click(function(e) {
+    if (!$(e.target).closest(".dropdown").length) {
+      $(".dropdown").removeClass("active");
+    }
+  });
+});
 
