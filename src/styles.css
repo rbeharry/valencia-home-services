@@ -283,11 +283,12 @@ html {
 /* Ensure parent container is full width */
 .why-choose-us {
   width: 100%;
-  padding-left: 10px;   /* optional side padding */
+  padding-left: 10px;
   padding-right: 10px;
-  margin: 0;
   box-sizing: border-box;
+  margin-top: 50px; /* 👈 adds 50px space above */
 }
+
 
 /* Grid: 2 columns on desktop */
 .grid-container-whychooseus {
@@ -390,7 +391,13 @@ padding: 10px;
 
 #testimonials{
     font-weight: bold;
+     
+  
 }
+
+ .testimonials {
+    margin-top: 50px;
+  }
 
 footer {
     text-align: center;
@@ -494,22 +501,7 @@ footer {
 }
 
 
-.contact-info {
-    margin: 10px;            /* Remove default spacing */
-    font-size: 14px;      /* Adjust size if needed */
-    color: white;  
-     display: flex;
-  align-items: center;       /* Match text color */
-}
 
-.contact-info a {
-    color: white;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
 
 #happy-family {
     display: block;           /* makes the image a block element */
