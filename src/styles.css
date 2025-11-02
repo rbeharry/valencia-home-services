@@ -281,13 +281,8 @@ html {
 }
 
 /* Ensure parent container is full width */
-.why-choose-us {
-  width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-  box-sizing: border-box;
-  margin-top: 50px; /* 👈 adds 50px space above */
-}
+
+
 
 
 /* Grid: 2 columns on desktop */
@@ -366,6 +361,10 @@ html {
   }
 }
 
+.whychooseus {
+  padding: -10px;
+  margin-top: 50px;
+}
 
 .schedule-service {
     font-size: 20px;
@@ -391,12 +390,15 @@ padding: 10px;
 
 #testimonials{
     font-weight: bold;
+     margin-top: 50px;
      
   
 }
 
  .testimonials {
     margin-top: 50px;
+    
+    
   }
 
 footer {
